@@ -4,6 +4,9 @@ class MemberT < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
+  	validates :email, presence: true
+	validates :password, presence: true
+
 	has_many :module_ts
 	has_many :tpr_ts
 	has_many :evaluation_ts
