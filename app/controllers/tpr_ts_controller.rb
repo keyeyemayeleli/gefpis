@@ -1,5 +1,4 @@
 class TprTsController < ApplicationController
-  before_filter :authenticate_user!
   before_action :set_tpr_t, only: [:show, :edit, :update, :destroy]
 
   # GET /tpr_ts

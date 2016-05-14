@@ -1,5 +1,5 @@
 class MemberTsController < ApplicationController
-before_filter :authenticate_user!
+
   # GET /member_ts
   def index
     @member_ts = MemberT.all

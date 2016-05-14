@@ -1,5 +1,4 @@
 class TuteeTsController < ApplicationController
-  before_filter :authenticate_user!
   before_action :set_tutee_t, only: [:show, :edit, :update, :destroy]
 
   # GET /tutee_ts

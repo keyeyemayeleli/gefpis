@@ -1,5 +1,4 @@
 class EvaluationTsController < ApplicationController
-  before_filter :authenticate_user!
   before_action  :set_evaluation_t, only: [:show, :edit, :update, :destroy]
 
   # GET /evaluation_ts
