@@ -1,4 +1,5 @@
 class ModuleTsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_module_t, only: [:show, :edit, :update, :destroy]
 
   # GET /module_ts

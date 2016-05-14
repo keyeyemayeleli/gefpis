@@ -4,10 +4,21 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def after_sign_in_path_for(member_t)
-  evaluation_ts_path(@evaluation_t)
+  	evaluation_ts_path(@evaluation_t)
   end
   def after_sign_out_path_for(member_t)
-  root_path
+  	
+  end
+
+  protected
+  def authenticate_user!
+    if member_t_signed_in?
+      super
+    else
+      redirect_to root_path
+      ## if you want render 404 page
+      ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+    end
   end
 
 end

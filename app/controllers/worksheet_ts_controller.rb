@@ -1,4 +1,5 @@
 class WorksheetTsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_worksheet_t, only: [:show, :edit, :update, :destroy]
 
   # GET /worksheet_ts

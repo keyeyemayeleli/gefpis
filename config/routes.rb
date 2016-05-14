@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-   root to: 'member_ts#login'
+  root to: 'pages#login'
 
 
   devise_for :member_ts, controllers: {
