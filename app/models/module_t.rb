@@ -8,6 +8,6 @@ class ModuleT < ActiveRecord::Base
 	has_many :worksheet_ts
 
 	def to_label
-		"#{self.file_name}"
+		"#{self.file_file_name}"
 	end
 end

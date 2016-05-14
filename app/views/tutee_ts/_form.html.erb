@@ -1,43 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
-  <div class="col s12">
-      <center>
-        <br>
-        <br>
-        <a class="main-green-text crete-round"><font size="6">Tutee Profile</font></a>          
-        <br>
-        <img src="images/line2.png" height="55">
-        <br>
-      </center>
-    </div>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+    <div class="col s12">
+          <center>
+          <br>
+          <br>
+          <a class="main-green-text crete-round"><font size="6">Tutee Profile</font></a>          
+          <br>
+          <%=image_tag("line3.png" , height:'55')%>
+          <br>
+          </center>
+        </div>
 
 
-
-<%= simple_form_for(@tutee_t) do |f| %>
+<div class="row">
+  <div class="container">
+    <%= simple_form_for(@tutee_t) do |f| %>
   <%= f.error_notification %>
+    <form class="col s12">
 
-  <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :school %>
-    <%= f.input :math_grade %>
-    <%= f.input :eng_grade %>
-    <%= f.input :father_name %>
-    <%= f.input :father_occupation %>
-    <%= f.input :mother_name %>
-    <%= f.input :mother_occupation %>
-    <%= f.input :ambition %>
-    <%= f.input :fav_subject %>
-    <%= f.input :fav_food %>
-    <%= f.input :fav_color %>
-    <%= f.input :fav_movie %>
-    <%= f.input :attendance %>
-    <%= f.association :module_t, label: 'Current Module', as: :select %>
-    <%= f.input :group_no %>
-  </div>
+      <div class="row">
+        <div class="input-field col s3">
+          <%= f.input :first_name, label: 'First Name' %>
+        </div>
+        <div class="input-field col s3">
+           <%= f.input :last_name, label: 'Last Name' %>
+        </div>
+        <div class="input-field col s3">
+              <%= f.input :father_name, label: "Father's Name" %>
+            </div>
+        <div class="input-field col s3">
+          <%= f.input :father_occupation, label: 'Occupation' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= f.input :school, collection: ['Holy Spirit Elementary School', 'Industrial Valley Elementary School']  %>
+        </div>
+          
+          <div class="input-field col s3">
+          <%= f.input :mother_name, label: "Mother's Name" %>
+        </div>
+        <div class="input-field col s3">
+           <%= f.input :mother_occupation %>
+        </div>
+      </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+      <div class="row">
+        <div class="input-field col s2">
+            <%= f.input :group_no, label: 'Group Number' %>
+      </div>
+        <div class="input-field col s4">
+           <%= f.association :module_t, label: 'Current Module' %>
+        </div>
+      
+      <div class="input-field col s3">
+           <%= f.input :ambition %>
+        </div>
+        <div class="input-field col s3">
+          <%= f.input :fav_color, label: 'Favorite Color' %>
+        </div>
+        </div>
+      <div class="row">
+        <div class="input-field col s3">
+          <%= f.input :math_grade, label:'Math Grade' %>
+        </div>
+        <div class="input-field col s3">
+          <%= f.input :eng_grade, label:'English Grade' %>
+        </div>
+        <div class="input-field col s3 ">
+          <%= f.input :fav_subject, label: 'Favorite Subject' %>
+        </div>
+        <div class="input-field col s3">
+          <%= f.input :fav_food, label: 'Favorite Food' %>
+        </div>
+      </div>
+
+        <div class="form-actions"><center>
+    <%= f.submit :Save, :class => 'waves-effect waves-light btn btn-main-green' %>
+    <%= link_to 'Cancel', tutee_ts_path, :class => 'waves-effect waves-light btn btn-main-green' %><br>
+  </center></div>
 <% end %>
+
+
+         </form>
+    </div>
+  </div>
+
+
+ 
 
 </html>

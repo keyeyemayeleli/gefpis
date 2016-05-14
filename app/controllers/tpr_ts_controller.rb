@@ -22,7 +22,8 @@ class TprTsController < ApplicationController
   # POST /tpr_ts
   def create
     @tpr_t = TprT.new(tpr_t_params)
-
+    @tpr_t.member_t = current_member_t #This allows name of member to be auto-associated
+    #@tpr_t.update_attribute(:tprdatetime,DateTime.now) #timestamp system
     if @tpr_t.save
       redirect_to @tpr_t, notice: 'Tpr t was successfully created.'
     else

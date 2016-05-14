@@ -1,24 +1,114 @@
 <%= simple_form_for(@member_t) do |f| %>
-  <%= f.error_notification %>
+<%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :id_number %>
-    <%= f.input :password %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :middle_initial %>
-    <%= f.input :email_address %>
-    <%= f.input :contact_no %>
-    <%= f.input :attendance %>
-    <%= f.input :membership, collection: ['Administrator', 'Modules', 'Tutors', 'Data Analysis'] %>
-    <%= f.input :committee, collection: ['EdOp', 'SA', 'EdForm', 'Acad'] %>
-    <%= f.input :birthday %>
-    <%= f.input :year_course %>
-    <%= f.input :scholarship, collection: ['Financial Aid', 'Academic', 'Others'] %>
-    
-  </div>
+<div class="form-inputs">
+<%= f.input :id_number %>
+<%= f.input :password %>
+<%= f.input :first_name %>
+<%= f.input :last_name %>
+<%= f.input :middle_initial %>
+<%= f.input :email_address %>
+<%= f.input :contact_no %>
+<%= f.input :attendance %>
+<%= f.input :membership, collection: ['Administrator', 'Modules', 'Tutors', 'Data Analysis'] %>
+<%= f.input :committee, collection: ['EdOp', 'SA', 'EdForm', 'Acad'] %>
+<%= f.input :birthday %>
+<%= f.input :year_course %>
+<%= f.input :scholarship, collection: ['Financial Aid', 'Academic', 'Others'] %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+</div>
+
+<div class="form-actions">
+<%= f.button :submit %>
+</div>
 <% end %>
+
+
+<div class="col s12">
+<center>
+<br>
+<br>
+<a class="main-green-text crete-round"><font size="6">Member Profile</font></a>          
+<br>
+<img src="images/line2.png" height="55">
+<br>
+</center>
+</div>
+
+<div class="row">
+<div class="container">
+<form class="col s12">
+
+<div class="row">
+<div class="input-field col s6">
+<input id="first_name" type="text" class="validate">
+<label for="first_name">First Name</label>
+</div>
+<div class="input-field col s6">
+<input id="last_name" type="text" class="validate">
+<label for="last_name">Last Name</label>
+</div>
+</div>
+<div class="row">
+<div class="input-field col s6">
+<input id="contact_number" type="text" class="validate">
+<label for="contact_number">Contact Number</label>
+</div>
+<div class="input-field col s6">
+<input type="date" class="datepicker">
+</div>
+</div>
+
+<div class="row">
+<div class="input-field col s6">
+<input id="email" type="text" class="validate">
+<label for="email">Email Address</label>
+</div>
+<div class="input-field col s6">
+<input id="year_course" type="text" class="validate">
+<label for="year_course">Year & Course</label>
+</div>
+</div>
+
+<div class="row">
+<div class="input-field col s6">
+<select>
+<option value="" disabled selected>Scholarship</option>
+<option value="1">None</option>
+<option value="2">Financial Aid</option>
+<option value="3">Academic Scholarship</option>
+</select>
+
+</div>
+<div class="input-field col s6">
+<select>
+<option value="" disabled selected>Committee</option>
+<option value="1">Administrator</option>
+<option value="2">Data Analysis Team</option>
+<option value="3">Modules Team</option>
+<option value="4">Tutors Team</option>
+</select>
+
+</div>
+</div>
+<div class="row">
+<div class="col s12 offset-s8">
+<div class="btn btn-main-green">
+<span>Create Account</span>
+</div> 
+
+<div class="btn btn-main-green">
+<span>Cancel</span>
+</div> 
+</div>                 
+</div>  
+
+
+</form>
+</div>
+</div>
+
+
+
+
+

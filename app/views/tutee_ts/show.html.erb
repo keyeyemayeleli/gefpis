@@ -1,89 +1,114 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @tutee_t.first_name %>
-</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @tutee_t.last_name %>
-</p>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
 
-<p>
-  <strong>School:</strong>
-  <%= @tutee_t.school %>
-</p>
+<div class="col s12">
+          <center>
+          <br>
+          <br>
+          <a class="main-green-text crete-round"><font size="6"><%= @tutee_t.first_name %> <%= @tutee_t.last_name %></font></a>          
+          <br>
+          <%=image_tag("line3.png" , height:'55')%>
+          <br>
+          </center>
+        </div>
 
-<p>
-  <strong>Math grade:</strong>
-  <%= @tutee_t.math_grade %>
-</p>
+<div class="row">
+  <div class="container">
+    <form class="col s12">
+<br>
+      <div class="row">
+        <div class="input-field col s3">
+           <label class="active" for="first_name">First Name</label>
+           <%= @tutee_t.first_name %>
+        </div>
+        <div class="input-field col s3">
+          <label class="active" for="first_name">Last Name</label>
+           <%= @tutee_t.last_name %>
+        </div>
+        <div class="input-field col s3">
+          <label class="active" for="first_name">Father's Name</label>
+              <%= @tutee_t.father_name %>
+            </div>
+        <div class="input-field col s3">
+          <label class="active" for="first_name">Occupation</label>
+          <%= @tutee_t.father_occupation %>
+      </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <label class="active" for="first_name">School</label>
+          <%= @tutee_t.school %>
+        </div>
+          
+          <div class="input-field col s3">
+            <label class="active" for="first_name">Mother's Name</label>
+          <%= @tutee_t.mother_name %>
+        </div>
+        <div class="input-field col s3">
+          <label class="active" for="first_name">Occupation</label>
+           <%= @tutee_t.mother_occupation %>
+        </div>
+      </div>
 
-<p>
-  <strong>Eng grade:</strong>
-  <%= @tutee_t.eng_grade %>
-</p>
+      <div class="row">
+        <div class="input-field col s2">
+          <label class="active" for="first_name">Group Number</label>
+            <%= @tutee_t.group_no %>
+      </div>
+        <div class="input-field col s4">
+          <label class="active" for="first_name">Current Module</label>
+           <% t= ModuleT.find(@tutee_t.module_t_id) %> <%= t.file_file_name %>
+        </div>
+      
+      <div class="input-field col s3">
+        <label class="active" for="first_name">Ambition</label>
+             <%= @tutee_t.ambition %>
+        </div>
+        <div class="input-field col s3">
+          <label class="active" for="first_name">Favorite Color</label>
+         <%= @tutee_t.fav_color %>
+        </div>
+        </div>
+      <div class="row">
+        <div class="input-field col s3">
+          <label class="active" for="first_name">Math Grade</label>
+          <%= @tutee_t.math_grade %>
+        </div>
+        <div class="input-field col s3">
+          <label class="active" for="first_name">English Grade</label>
+          <%= @tutee_t.eng_grade %>
+        </div>
+        <div class="input-field col s3 ">
+          <label class="active" for="first_name">Favorite Subject</label>
+           <%= @tutee_t.fav_subject %>
+        </div>
+        <div class="input-field col s3">
+          <label class="active" for="first_name">Favorite Food</label>
+         <%= @tutee_t.fav_food %>
+      </div>
+    </div>
 
-<p>
-  <strong>Father name:</strong>
-  <%= @tutee_t.father_name %>
-</p>
+        <div class="form-actions"><center>
+   <br>
+   <%= link_to 'Progress Report', tpr_t_path(@tutee_t), :class => 'waves-effect waves-light btn btn-main-green' %> 
+   <%= link_to 'Edit', edit_tutee_t_path(@tutee_t), :class => 'waves-effect waves-light btn btn-main-green' %> 
+<%= link_to 'Back', tutee_ts_path, :class => 'waves-effect waves-light btn btn-main-green' %>
+  </center></div>
+         </form>
+    </div>
+  </div>
 
-<p>
-  <strong>Father occupation:</strong>
-  <%= @tutee_t.father_occupation %>
-</p>
 
-<p>
-  <strong>Mother name:</strong>
-  <%= @tutee_t.mother_name %>
-</p>
 
-<p>
-  <strong>Mother occupation:</strong>
-  <%= @tutee_t.mother_occupation %>
-</p>
 
-<p>
-  <strong>Ambition:</strong>
-  <%= @tutee_t.ambition %>
-</p>
-
-<p>
-  <strong>Fav subject:</strong>
-  <%= @tutee_t.fav_subject %>
-</p>
-
-<p>
-  <strong>Fav food:</strong>
-  <%= @tutee_t.fav_food %>
-</p>
-
-<p>
-  <strong>Fav color:</strong>
-  <%= @tutee_t.fav_color %>
-</p>
-
-<p>
-  <strong>Fav movie:</strong>
-  <%= @tutee_t.fav_movie %>
-</p>
-
-<p>
-  <strong>Attendance:</strong>
-  <%= @tutee_t.attendance %>
-</p>
-
-<p>
-  <strong>Module t:</strong>
-  <%= @tutee_t.module_t_id %>
-</p>
-
-<p>
-  <strong>Group no:</strong>
-  <%= @tutee_t.group_no %>
-</p>
-
-<%= link_to 'Edit', edit_tutee_t_path(@tutee_t) %> |
-<%= link_to 'Back', tutee_ts_path %>

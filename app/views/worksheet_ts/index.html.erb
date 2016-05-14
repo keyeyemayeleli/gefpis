@@ -1,37 +1,67 @@
+<body class="main-white">
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Worksheet Ts</h1>
+<div class="col s12">
+    <center>
+      <br>
+      <br>
+      <a class="main-green-text crete-round"><font size="6">Worksheet Results</font></a>
+      <br>
+      <%=image_tag("/assets/line3.png" , height:'55')%>
+      <br>
+      <br>
+      <%= link_to 'Create worksheet', new_worksheet_t_path, :class => 'waves-effect waves-light btn btn-main-green'  %>
+      <br>
+      <br>
+    </center>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Module t</th>
-      <th>Member t</th>
-      <th>Tutee t</th>
-      <th>School</th>
-      <th>Score</th>
-      <th>Reached quota</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @module_ts.each do |m|%>
+<!--table-->
+  <div class="container">
+    <%= m.topic %>
+ <% m_count = WorksheetT.where(module_t_id: m.id).count %>
+ <% if m_count != 0 %>
 
-  <tbody>
-    <% @worksheet_ts.each do |worksheet_t| %>
+    <div class="row">
+    <table class="bordered">
+       <thead class="table-header crete-round">
+        <tr>
+          <div class="col s3">
+          <th data-field="subject">Tutee</th>
+          </div>
+          <div class="col s3">
+          <th data-field="subject">Score</th>
+          </div>
+          <div class="col s3">
+          <th data-field="actions"><center>Actions</center></th>
+          </div>
+        </tr>
+      </thead>
+      <tbody>
+    <% WorksheetT.where(module_t_id: m.id).find_each  do |w| %>
       <tr>
-        <td><%= worksheet_t.module_t_id %></td>
-        <td><%= worksheet_t.member_t_id %></td>
-        <td><%= worksheet_t.tutee_t_id %></td>
-        <td><%= worksheet_t.school %></td>
-        <td><%= worksheet_t.score %></td>
-        <td><%= worksheet_t.reached_quota %></td>
-        <td><%= link_to 'Show', worksheet_t %></td>
-        <td><%= link_to 'Edit', edit_worksheet_t_path(worksheet_t) %></td>
-        <td><%= link_to 'Destroy', worksheet_t, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <div class="col s4">
+        <td><%= w.tutee_t.first_name %> <%= w.tutee_t.last_name %></td>
+        </div>
+        <div class="col s4">
+        <td><%= w.score %></td>
+        </div>
+        <div class="col s3">
+              <td><center>
+              <%= link_to 'Edit', edit_worksheet_t_path(w), :class => 'waves-effect waves-light btn btn-main-green' %>
+              <%= link_to 'Delete', w, method: :delete, :class => 'waves-effect waves-light btn btn-main-green', data: { confirm: 'Are you sure?' } %></center></td>
+            </div>
+        </tr>        <% end %>
+      </tbody>
+    </table>
+ <% else %>
+ <br>No worksheets yet. <br>
+ <% end %>
+</div>
+</div>
+       <% end %>
+</body>
 
-<br>
 
-<%= link_to 'New Worksheet t', new_worksheet_t_path %>
+

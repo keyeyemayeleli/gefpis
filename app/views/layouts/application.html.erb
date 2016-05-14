@@ -18,7 +18,7 @@
     </head>
 
 
-  
+    <body class="main-white">
   <!--navbar-dropdown--> 
    <ul id="dropdown1" class="dropdown-content">
       <li><%= link_to "Log Out", destroy_member_t_session_path, :method => :delete, class: 'main-green-text'%></li>
@@ -38,11 +38,11 @@
           <% if member_t_signed_in?%>
 
           <%if current_member_t.membership == "Administration"%> <!--ACCESSIBILITY IF ADMIN-->
-            <li><%= link_to "Modules", module_ts_path(), class: 'main-green-text'%></li>
-            <li><%= link_to "Evaluations", evaluation_ts_path(), class: 'main-green-text'%></li>
-            <li><a class="dropdown-button main-green-text" href="#!" data-activates="dropdown2" data-beloworigin="true"><font size="5">&nbsp;Tutees</font><i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><%= link_to "Members", member_ts_path(), class: 'main-green-text'%></li>
-            <li><%= link_to "Worksheet", worksheet_ts_path, class: 'main-green-text'%></li>  
+            <li><%= link_to "Modules", module_ts_path(), class: 'main-green-text nav-bar-text'%></li>
+            <li><%= link_to "Evaluations", evaluation_ts_path(), class: 'main-green-text nav-bar-text'%></li>
+            <li><a class="dropdown-button main-green-text nav-bar-text" href="#!" data-activates="dropdown2" data-beloworigin="true">&nbsp;Tutees</font><i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><%= link_to "Members", member_ts_path(), class: 'main-green-text nav-bar-text'%></li>
+            <li><%= link_to "Worksheet", worksheet_ts_path, class: 'main-green-text nav-bar-text'%></li>  
           </ul>
           <ul id="nav-mobile" class="right hide-on-med-and-down open-sans">
             <li>
@@ -52,8 +52,8 @@
 
             <%elsif current_member_t.membership == "Tutors"%> <!--ACCESSIBILITY IF TUTOR-->
             <ul id="nav-mobile" class="left hide-on-med-and-down open-sans">
-            <li><%= link_to "Modules", module_ts_path(), class: 'main-green-text'%></li>
-            <li><%= link_to "Evaluations", evaluation_ts_path(), class: 'main-green-text'%></li>
+            <li><%= link_to "Modules", module_ts_path(), class: 'main-green-text nav-bar-text'%></li>
+            <li><%= link_to "Evaluations", evaluation_ts_path(), class: 'main-green-text nav-bar-text'%></li>
             <li><a class="dropdown-button main-green-text" href="#!" data-activates="dropdown2" data-beloworigin="true"><font size="5">&nbsp;Tutees</font><i class="material-icons right">arrow_drop_down</i></a></li>
           </ul>
           <ul id="nav-mobile" class="right hide-on-med-and-down open-sans">
@@ -64,19 +64,18 @@
 
             <%end%> 
 
-            <li><a class="dropdown-button main-green-text" href="#!" data-activates="dropdown1" data-below-origin="true">Hello, <%= current_member_t.first_name%>!<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button main-green-text nav-bar-text" href="#!" data-activates="dropdown1" data-beloworigin="true">Hello, <%= current_member_t.first_name%>!<i class="material-icons right">arrow_drop_down</i></a></li>
           </ul>
 
           <%else%>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><%= link_to "Log in", new_member_t_session_path, class: 'main-green-text'%></li>
+            <li><%= link_to "Log in", new_member_t_session_path, class: 'main-green-text nav-bar-text'%></li>
           </ul>
-
           <%end%>
       </div>
     </nav>
 
-    <body class="main-white">
+
 <%= yield %>
 </body>
 

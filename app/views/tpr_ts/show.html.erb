@@ -1,40 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Week no:</strong>
-  <%= @tpr_t.week_no %>
-</p>
+
+<br>
+<center>
+  <div class="container card open-sans main-white">
+    <div class="card-content">
+      <span class="card-title activator main-green-text">TPR - Week <%= @tpr_t.week_no %> </i></span>
+      <div class="row"><br>
+        <b>Tutee</b><br>
+        <%= @tpr_t.tutee_t.first_name %> <%= @tpr_t.tutee_t.last_name %><br><br>
+        <b>Module</b><br>
+        <%= @tpr_t.module_t.topic %><br><br>
+        <b>Strengths </b><br>
+        <%= @tpr_t.strengths %><br><br>
+        <b>Weaknesses</b><br>
+        <%= @tpr_t.weaknesses %><br><br>
+        <br><br>
+        <b>Created by:</b>
+        <%= @tpr_t.member_t.first_name %> <%= @tpr_t.member_t.middle_initial %>. <%= @tpr_t.member_t.last_name %><br><br>
+        <b>Date & Time of Upload:</b> <%=  %>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!--buttons-->
+  <div class="row">
+    <center>
+      <%= link_to 'Edit', edit_tpr_t_path(@tpr_t), :class => 'waves-effect waves-light btn btn-main-green' %> 
+      <%= link_to 'Back',tpr_ts_path, :class => 'waves-effect waves-light btn btn-main-green' %>
+    </center>
+  </div>
+</form>
 
 
-<p>
-  <strong>Tutee t:</strong>
-  <%= @tpr_t.tutee_t_id %>
-</p>
 
-<p>
-  <strong>Strengths:</strong>
-  <%= @tpr_t.strengths %>
-</p>
 
-<p>
-  <strong>Weaknesses:</strong>
-  <%= @tpr_t.weaknesses %>
-</p>
 
-<p>
-  <strong>Actions:</strong>
-  <%= @tpr_t.actions %>
-</p>
-
-<p>
-  <strong>Module t:</strong>
-  <%= @tpr_t.module_t_id %>
-</p>
-
-<p>
-  <strong>Member t:</strong>
-  <%= @tpr_t.member_t_id %>
-</p>
-
-<%= link_to 'Edit', edit_tpr_t_path(@tpr_t) %> |
-<%= link_to 'Back', tpr_ts_path %>
+</div>
+</center> 

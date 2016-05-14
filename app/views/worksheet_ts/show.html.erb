@@ -1,34 +1,34 @@
 <p id="notice"><%= notice %></p>
+<br>
+<center>
+  <div class="container card open-sans main-white">
+    <div class="card-content">
+      <span class="card-title activator main-green-text">Worksheet Result </i></span> 
+      <div class="row"><br>
+        <b>Tutee</b><br>
+        <%= @worksheet_t.tutee_t.first_name %> <%= @worksheet_t.tutee_t.last_name %><br><br>
+        <b>Module</b><br>
+        <%= @worksheet_t.module_t.topic %><br><br>
+        <b>School </b><br>
+        <%= @worksheet_t.tutee_t.school %><br><br>
+        <b>Score</b><br>
+        <%= @worksheet_t.score %><br><br>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!--buttons-->
+  <div class="row">
+    <center>
+      <%= link_to 'Edit', edit_worksheet_t_path(@worksheet_t), :class => 'waves-effect waves-light btn btn-main-green' %> 
+      <%= link_to 'Back',worksheet_ts_path, :class => 'waves-effect waves-light btn btn-main-green' %>
+    </center>
+  </div>
+</form>
 
-<p>
-  <strong>Module t:</strong>
-  <%= @worksheet_t.module_t_id %>
-</p>
 
-<p>
-  <strong>Member t:</strong>
-  <%= @worksheet_t.member_t_id %>
-</p>
 
-<p>
-  <strong>Tutee t:</strong>
-  <%= @worksheet_t.tutee_t_id %>
-</p>
 
-<p>
-  <strong>School:</strong>
-  <%= @worksheet_t.school %>
-</p>
 
-<p>
-  <strong>Score:</strong>
-  <%= @worksheet_t.score %>
-</p>
-
-<p>
-  <strong>Reached quota:</strong>
-  <%= @worksheet_t.reached_quota %>
-</p>
-
-<%= link_to 'Edit', edit_worksheet_t_path(@worksheet_t) %> |
-<%= link_to 'Back', worksheet_ts_path %>
+</div>
+</center> 

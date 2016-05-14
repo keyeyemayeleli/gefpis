@@ -1,15 +1,51 @@
 <%= simple_form_for(@worksheet_t) do |f| %>
-  <%= f.error_notification %>
+<%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.association :module_t, label: "Module Checked", label_method: :topic %>
-    <%= f.association :tutee_t, label: "Tutee of checked module", label_method: :last_name %>
-    <%= f.input :school %>
-    <%= f.input :score %>
-    <%= f.input :reached_quota, collection: ["Yes", "No"]%>
-  </div>
+<div class="form-inputs">
+  <div class="col s12">
+          <center>
+          <br>
+          <br>
+          <a class="main-green-text crete-round"><font size="6">Worksheet Results</font></a>            
+          <br>
+          <%=image_tag("line3.png" , height:'55')%>
+          <br>
+          </center>
+          <br>
+        </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="row">
+    <div class="col s4 offset-s4">
+      <div class="card open-sans main-white">
+        <div class="card-content">
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.association :module_t, prompt: 'Module' %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.association :tutee_t, prompt: 'Tutee' %>
+            </div>              
+          </div>
+          <div class="row">
+            <div class="input-field col s4">
+              <%= f.input :score %>
+            </div>
+          </div> 
+
+          <div class="row">
+            <div class="col s12">
+
+              <div class="form-actions col offset-s6">
+                <%= f.button :submit, "Submit" %>
+              </div>
+            </div>                 
+          </div>  
+
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>

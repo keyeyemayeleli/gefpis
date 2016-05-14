@@ -4,6 +4,7 @@ class WorksheetTsController < ApplicationController
   # GET /worksheet_ts
   def index
     @worksheet_ts = WorksheetT.all
+    @module_ts = ModuleT.all
   end
 
   # GET /worksheet_ts/1
@@ -22,8 +23,14 @@ class WorksheetTsController < ApplicationController
   # POST /worksheet_ts
   def create
     @worksheet_t = WorksheetT.new(worksheet_t_params)
-
+    @worksheet_t.member_t = current_member_t #This allows name of member to be auto-associated
+    if (@worksheet_t.score > 50)
+        @worksheet_t.reached_quota = 'Y'
+    else
+       @worksheet_t.reached_quota = 'N'
+    end
     if @worksheet_t.save
+         
       redirect_to @worksheet_t, notice: 'Worksheet t was successfully created.'
     else
       render :new

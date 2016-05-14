@@ -26,7 +26,7 @@ class EvaluationTsController < ApplicationController
     @evaluation_t.update_attribute(:evaldatetime, DateTime.now) #timestamp system
 
     if @evaluation_t.save
-      redirect_to @evaluation_t, notice: 'Evaluation t was successfully created.'
+      redirect_to evaluation_ts_path(), notice: 'Evaluation t was successfully created.'
     else
       render :new
     end
