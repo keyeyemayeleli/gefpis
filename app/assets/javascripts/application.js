@@ -16,3 +16,13 @@
 //= require materialize/extras/nouislider
 //= require_tree 
 //= require script
+
+function bootstrap_alert(elem, message, timeout) {
+  $(elem).show().html('<div class="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span>'+message+'</span></div>');
+
+  if (timeout || timeout === 0) {
+    setTimeout(function() { 
+      $(elem).alert('close');
+    }, timeout);    
+  }
+};

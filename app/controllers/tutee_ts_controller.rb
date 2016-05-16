@@ -3,8 +3,13 @@ class TuteeTsController < ApplicationController
 
   # GET /tutee_ts
   def index
-    @tutee_ts = TuteeT.all
+    if params[:school]
+      @tutee_ts = TuteeT.where(:school => params[:school]).order(:last_name)
+    else
+      @tutee_ts = TuteeT.order(:last_name)
+    end
   end
+
 
   # GET /tutee_ts/1
   def show

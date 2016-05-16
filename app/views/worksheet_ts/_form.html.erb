@@ -1,6 +1,4 @@
 <%= simple_form_for(@worksheet_t) do |f| %>
-<%= f.error_notification %>
-
 <div class="form-inputs">
   <div class="col s12">
           <center>
@@ -32,10 +30,6 @@
           <div class="row">
             <div class="dateinput col s6">
               <%= f.input :score %>
-            </div>
-
-             <div class="dateinput col s6">
-              <%= f.input :reached_quota, label: 'Reached Quota?', collection: ['Yes', 'No'] %>
             </div>
           </div> 
        <div class="row">

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,18 +43,18 @@
   <div class="form-inputs">
     <div class="row">
     <div class="input-field col s6">  
-  	<%= f.input :id_number, required: false, autofocus: true, label: 'ID Number' %>
+  	<%= f.input :id_number, required: true, autofocus: true, label: 'ID Number' %>
     </div>
     <div class="input-field col s6">  
-      <%= f.input :year_course, required: false, autofocus: true, label: 'Year - Course (e.g. "III - BS MIS")' %>
+      <%= f.input :year_course, required: true, autofocus: true, label: 'Year - Course (e.g. "III - BS MIS")' %>
     </div>
   </div>
     <div class="row">
     <div class="input-field col s5">
-      <%= f.input :first_name, required: false, autofocus: true, label: 'First Name' %>
+      <%= f.input :first_name, required: true, autofocus: true, label: 'First Name' %>
     </div>
     <div class="input-field col s5">
-      <%= f.input :last_name, required: false, autofocus: true, label: 'Last Name' %>
+      <%= f.input :last_name, required: true, autofocus: true, label: 'Last Name' %>
     </div>
     <div class="input-field col s2">
       <%= f.input :middle_initial, required: false, autofocus: true, label: 'Middle Initial' %>
@@ -64,18 +65,18 @@
           <%= f.input :email, required: true, autofocus: true, label: 'E-mail Address' %>
     </div>
     <div class="input-field col s6">
-      <%= f.input :contact_no, required: false, autofocus: true, label: 'Contact Number' %>
+      <%= f.input :contact_no, required: true, autofocus: true, label: 'Contact Number' %>
     </div>
     </div>
   	<div class="row">
     <div class="dateinput col s4">
-      <%= f.input :membership, required: false, autofocus: true, collection: ['Administration', 'Data Analysis', 'Modules', 'Tutors'] %>
+      <%= f.input :membership, required: true, autofocus: true, collection: ['Administration', 'Data Analysis', 'Modules', 'Tutors'] %>
     </div>
     <div class="dateinput col s4">
-        <%= f.input :committee, required: false, autofocus: true, collection: ['Education Operation', 'Education Formation', 'Social Analysis', 'Academic'] %>
+        <%= f.input :committee, required: true, autofocus: true, collection: ['Education Operation', 'Education Formation', 'Social Analysis', 'Academic'] %>
     </div>
     <div class="dateinput col s4">
-        <%= f.input :scholarship, required: false, autofocus: true, collection: ['Financial Aid', 'Academic' ] %>
+        <%= f.input :scholarship, required: true, autofocus: true, collection: ['Financial Aid', 'Academic' ] %>
     
     </div>
     </div>

@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +34,15 @@
 <!--table-->
   <div class="container">
     <div class="row">
+       <a class='dropdown-button btn btn-main-green' href='#' data-activates='dropdown6'>Filter by School:</a>
+   <ul id='dropdown6' class='dropdown-content'>
+    
+    <li><%=link_to "HSES", tutee_ts_path(:school=>"Holy Spirit Elementary School"), class: 'main-green-text'%> </li>
+    <li class="divider"></li>
+    <li><%=link_to "IVES", tutee_ts_path(:school=>"Industrial Valley Elementary School"), class: 'main-green-text'%></li>
+  
+  </ul> 
+  <br><br>
     <table class="bordered">
       <thead class="table-header crete-round">
         <tr>

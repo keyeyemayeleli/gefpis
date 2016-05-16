@@ -3,6 +3,11 @@ class TprTsController < ApplicationController
 
   # GET /tpr_ts
   def index
+    if params[:school]
+      @tutees = TuteeT.where(:school => params[:school])
+    else
+      @tutees = TuteeT.all
+    end
     @tpr_ts = TprT.all
   end
 
@@ -36,7 +41,7 @@ class TprTsController < ApplicationController
   def update
     if @tpr_t.update(tpr_t_params)
       #flash[:notice] = 'TPR was successfully updated.'
-      redirect_to @tpr_t
+      redirect_to @tpr_ts
       @tpr_t.update_attribute(:evaldatetime, DateTime.now) #timestamp system
     else
       render :edit

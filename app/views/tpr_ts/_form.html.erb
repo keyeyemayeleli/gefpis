@@ -18,15 +18,15 @@
       <div class="row">
         <div class="input-field col s12">
         <div class="dateinput col s12">
-          <%= f.association :tutee_t, :label => 'Tutee', collection: TuteeT.order('last_name ASC') %>
+          <%= f.association :tutee_t, :label => 'Tutee', collection: TuteeT.order('last_name ASC'), required: true %>
         </div>
       </div>
       <div class="row">
         <div class="dateinput col s9">
-          <%= f.association :module_t, :label => 'Module', collection: ModuleT.order('file_file_name ASC') %>
+          <%= f.association :module_t, :label => 'Module', collection: ModuleT.order('file_file_name ASC'), required: true %>
         </div>
         <div class="dateinput col s3">
-        <%= f.input :week_no, :label => 'Week No.', collection: ['1','2','3','4', '5','6','7','8', '9','10', '11', '12'] %>
+        <%= f.input :week_no, :label => 'Week No.', collection: ['1','2','3','4', '5','6','7','8', '9','10', '11', '12'], required: true %>
       </div> 
       </div>
       <div class="row">

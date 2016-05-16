@@ -19,10 +19,11 @@
 <% @module_ts.each do |m|%>
 <!--table-->
   <div class="container">
-    <%= m.topic %>
+<a class="main-green-text"><%= m.topic %> Module</a>
  <% m_count = WorksheetT.where(module_t_id: m.id).count %>
  <% if m_count != 0 %>
-
+Total worksheets: <%= m_count %><br>
+Average: <%  - m_count %>
     <div class="row">
     <table class="bordered">
        <thead class="table-header crete-round">
@@ -57,7 +58,7 @@
       </tbody>
     </table>
  <% else %>
- <br>No worksheets yet. <br>
+     No worksheets yet.<br><br>
  <% end %>
 </div>
 </div>

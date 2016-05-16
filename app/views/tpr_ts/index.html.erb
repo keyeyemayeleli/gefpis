@@ -12,78 +12,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
-<div class="col s12">
-          <center>
-          <br>
-          <br>
-          <a class="main-green-text crete-round"><font size="6">Tutee Progress Reports</font></a>            
-          <br>
-          <%=image_tag("line3.png" , height:'55')%>
-          <br>
-          </center>
-          <center>
-            <%= link_to 'Create Progress Report', new_tpr_t_path, :class => 'waves-effect waves-light btn btn-main-green' %>
-          <br>
-          <br>
-      </center>
-        </div>
 
+
+<div class="col s12">
+  <center>
+    <br>
+    <br>
+    <a class="main-green-text crete-round"><font size="6">Tutee Progress Reports</font></a>            
+    <br>
+    <%=image_tag("line3.png" , height:'55')%>
+    <br>
+  </center>
+  <center>
+    <%= link_to 'Create Progress Report', new_tpr_t_path, :class => 'waves-effect waves-light btn btn-main-green' %>
+    <br>
+    <br>
+  </center>
+</div>  
+
+
+<div class="container">
+  <div class="row">
+ <a class='dropdown-button btn btn-main-green' href='#' data-activates='dropdown6'>Filter by School:</a>
+   <ul id='dropdown6' class='dropdown-content'>
+    
+    <li><%=link_to "HSES", tpr_ts_path(:school=>"Holy Spirit Elementary School"), class: 'main-green-text'%> </li>
+    <li class="divider"></li>
+    <li><%=link_to "IVES", tpr_ts_path(:school=>"Industrial Valley Elementary School"), class: 'main-green-text'%></li>
+  
+  </ul> 
+  <br><br>
+<% @tutees.each do |tutee| %>
+<% count = TprT.where(tutee_t_id: tutee.id).count %>
 <!--table-->
-  <div class="container">
-    <div class="row">
+
+<a class="main-green-text crete-round"><%= tutee.first_name%> <%= tutee.last_name%></a> 
+ <% if count != 0 %>
     <table class="bordered">
       <thead class="table-header crete-round">
         <tr>
           <div class="col s1">
-          <th data-field="name">Week</th>
+            <th data-field="name">Week</th>
           </div>
           <div class="col s2">
-          <th data-field="subject">Tutee Name</th>
+            <th data-field="subject">Tutee Name</th>
           </div>
           <div class="col s3">
-          <th data-field="subject">Module</th>
+            <th data-field="subject">Module</th>
           </div>
           <div class="col s3">
-          <th data-field="subject">Topic</th>
+            <th data-field="subject">Topic</th>
           </div>
           <div class="col s3">
-          <th data-field="actions"><center>Actions</center></th>
+            <th data-field="actions"><center>Actions</center></th>
           </div>
         </tr>
       </thead>
       <tbody>
-    <% @tpr_ts.each do |tpr_t| %>
-      <tr>
-        <div class="col s1">
-<td><%= tpr_t.week_no %></td>
-        </div>
-        <div class="col s2">
-        <td><% t=TuteeT.find(tpr_t.tutee_t_id) %><%= t.first_name %> <%= t.last_name %> </td>
-        </div>
+        <% TprT.where(tutee_t_id: tutee.id).find_each do |tpr_t| %>
+        <tr>
+          <div class="col s1">
+            <td><%= tpr_t.week_no %></td>
+          </div>
+          <div class="col s2">
+            <td><% t=TuteeT.find(tpr_t.tutee_t_id) %><%= t.first_name %> <%= t.last_name %> </td>
+          </div>
 
-        <div class="col s3">
-        <td><% t= ModuleT.find(tpr_t.module_t_id) %><%= t.file_file_name %></td>
-        </div>
+          <div class="col s3">
+            <td><% t= ModuleT.find(tpr_t.module_t_id) %><%= t.file_file_name %></td>
+          </div>
 
-        <div class="col s3">
-        <td><% t= ModuleT.find(tpr_t.module_t_id) %><%= t.topic %></td>
-        </div>
+          <div class="col s3">
+            <td><% t= ModuleT.find(tpr_t.module_t_id) %><%= t.topic %></td>
+          </div>
 
-        <div class="col s3">
-              <td><center><%= link_to 'Show', tpr_t, :class => 'waves-effect waves-light btn btn-main-green' %>
+          <div class="col s3">
+            <td><center><%= link_to 'Show', tpr_t, :class => 'waves-effect waves-light btn btn-main-green' %>
               <%= link_to 'Edit', edit_tpr_t_path(tpr_t), :class => 'waves-effect waves-light btn btn-main-green' %>
               <%= link_to 'Delete', tpr_t, method: :delete, :class => 'waves-effect waves-light btn btn-main-green', data: { confirm: 'Are you sure?' } %>
-              
+
             </center></td>
-            </div>
+          </div>
         </tr>
-
-
-
         <% end %>
       </tbody>
     </table>
+    <% else %>
+ No TPRs for this tutee yet. 
+    <% end %>
+  </div>
+  </div>
+    <% end %>
 
-
-</body>
-</html>
+  </body>
+  </html>

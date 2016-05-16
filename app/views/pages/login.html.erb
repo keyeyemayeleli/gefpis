@@ -1,50 +1,57 @@
 <%= form_for(:member_t, :url => session_path(:member_t)) do |f| %>
 <div class="container">
+  <div class="row">
+    <div class="col s4 offset-s4">
+      <div class="card">
+        <div class="card-image">
+          <%=image_tag("gabay-kid.png")%>
+          <span class="card-title open-sans main-white-text"><font size="6.5">GEFPIS</font></span>
+        </div>
+        <div class="card-content open-sans main-grey-text">
           <div class="row">
-            <div class="col s4 offset-s4">
-              <div class="card">
-                <div class="card-image">
-                  <%=image_tag("gabay-kid.png")%>
-                    <span class="card-title open-sans main-white-text"><font size="6.5">GEFPIS</font></span>
+            <form class="col s12">
+              <div class="row">
+                <div class="col s12">
+                <% if flash[:alert] %>
+                  <i class="material-icons" style="float:left;">error&nbsp;</i><a class="flash-error" style="color:black;float:left;"><%= flash[:alert] %></a>
+                  <br><br>
+                <% end %>
+
+              </div>
+                <div class="input-field col s12">
+                  <%= f.text_field :email, :id => 'icon_prefix' %>
+                  <label for="icon_prefix"> <i class="tiny material-icons">email</i>&nbsp;Email Address</label>
                 </div>
-                <div class="card-content open-sans main-grey-text">
-                  <div class="row">
-                    <form class="col s12">
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <%= f.text_field :email, :id => 'icon_prefix' %>
-                          <label for="icon_prefix"> <i class="tiny material-icons">email</i>&nbsp;Email Address</label>
-                        </div>
-                        <div class="input-field col s12">
-                          <%= f.password_field :password, :id => 'icon_telephone' %>
-                          <label for="icon_telephone"><i class="tiny material-icons">lock_outline</i>&nbsp;Password</label>
-                        </div>
-                        <div class="col s12">
-                           <%= f.check_box :remember_me, :id => 'filled-in-box', :class => 'main-green' %>
-                        <label for="filled-in-box">Remember Me</label>
-                        </div>
-                        <div class="col s12">
-                          <br>
-                          <div class="form-actions">
-    <%= f.submit :Login, label: 'Sign In', class: "waves-effect waves-light btn col s12"
- %>
-  </div>
-                        </div>
-                        <div align="left" class="col s6">
-                          <br>
-                          <%= link_to 'Create an account', new_registration_path(:member_t), class: 'main-green-text login-text'%>
-                        </div>
-                        <div align="right" class="col s6">
-                          <br>
-                           <%= link_to "Forgot your password?", new_password_path(:member_t), class: 'login-text' %>
-                        </div>
-                      </div>
-                    </form>
+                <div class="input-field col s12">
+                  <%= f.password_field :password, :id => 'icon_telephone' %>
+                  <label for="icon_telephone"><i class="tiny material-icons">lock_outline</i>&nbsp;Password</label>
+                </div>
+                <div class="col s12">
+                  <%= f.check_box :remember_me, :id => 'filled-in-box', :class => 'main-green' %>
+                  <label for="filled-in-box">Remember Me</label>
+                </div>
+                <div class="col s12">
+                  <br>
+                  <div class="form-actions">
+                    <%= f.button :submit, class: "waves-effect waves-light btn col s12" %>
                   </div>
                 </div>
+                <div align="left" class="col s6">
+                  <br>
+                  <%= link_to 'Create an account', new_registration_path(:member_t), class: 'main-green-text login-text'%>
+                </div>
+
+                <div align="right" class="col s6">
+                  <br>
+                  <%= link_to "Forgot your password?", new_password_path(:member_t), class: 'login-text' %>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <% end %>

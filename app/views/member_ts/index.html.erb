@@ -29,6 +29,16 @@
 
 <div class="container">
     <div class="row">
+             <a class='dropdown-button btn btn-main-green' href='#' data-activates='dropdown6'>Filter by Membership:</a>
+   <ul id='dropdown6' class='dropdown-content'>
+    
+    <li><%=link_to "Admin", member_ts_path(:arm=>"Administration"), class: 'main-green-text'%> </li>
+    <li class="divider"></li>
+    <li><%=link_to "Tutors", member_ts_path(:arm=>"Tutors"), class: 'main-green-text'%></li>
+    <li><%=link_to "Modules", member_ts_path(:arm=>"Modules"), class: 'main-green-text'%></li>
+    <li><%=link_to "Data Analysis", member_ts_path(:arm=>"Data Analysis"), class: 'main-green-text'%></li>
+  
+  </ul> 
     <table class="bordered">
       <thead class="table-header crete-round">
         <tr>
