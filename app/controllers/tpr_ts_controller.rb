@@ -25,7 +25,8 @@ class TprTsController < ApplicationController
     @tpr_t.member_t = current_member_t #This allows name of member to be auto-associated
     #@tpr_t.update_attribute(:tprdatetime,DateTime.now) #timestamp system
     if @tpr_t.save
-      redirect_to @tpr_t, notice: 'Tpr t was successfully created.'
+      #flash[:notice] = 'TPR was successfully created.'
+      redirect_to @tpr_t
     else
       render :new
     end
@@ -34,7 +35,8 @@ class TprTsController < ApplicationController
   # PATCH/PUT /tpr_ts/1
   def update
     if @tpr_t.update(tpr_t_params)
-      redirect_to @tpr_t, notice: 'Tpr t was successfully updated.'
+      #flash[:notice] = 'TPR was successfully updated.'
+      redirect_to @tpr_t
     else
       render :edit
     end
@@ -43,7 +45,8 @@ class TprTsController < ApplicationController
   # DELETE /tpr_ts/1
   def destroy
     @tpr_t.destroy
-    redirect_to tpr_ts_url, notice: 'Tpr t was successfully destroyed.'
+    #flash[:notice]  = 'TPR was successfully deleted.'
+    redirect_to tpr_ts_url
   end
 
   private

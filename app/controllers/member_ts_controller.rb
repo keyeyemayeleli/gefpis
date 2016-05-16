@@ -21,9 +21,4 @@ class MemberTsController < ApplicationController
       redirect_to member_ts_path, notice: "Member Deleted."
     end
   end
-
-
-
-
-
 end

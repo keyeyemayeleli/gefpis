@@ -10,9 +10,12 @@
       <%=image_tag("/assets/line3.png" , height:'55')%>
       <br>
       <br>
-      <%= link_to 'Create Module', new_module_t_path, :class => 'waves-effect waves-light btn btn-main-green' %>
+      <%if current_member_t.membership == "Modules" || current_member_t.membership == "Administration"  %>
+          <%= link_to 'Create Module', new_module_t_path, :class => 'waves-effect waves-light btn btn-main-green' %>
+          <br>
       <br>
-      <br>
+      <% end %>
+      
     </center>
   </div>
 
