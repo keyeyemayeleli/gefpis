@@ -18,15 +18,15 @@
     <div class="input-field col s6 offset-s3"> 
       <div class="row">
         <div class="input-field col s12">
-          <%= f.association :tutee_t, prompt: 'Tutee' %>
+          <%= f.association :tutee_t, :label => 'Tutee' %>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s9">
-          <%= f.association :module_t, prompt: 'Module' %>
+          <%= f.association :module_t, :label => 'Module' %>
         </div>
         <div class="input-field col s3">
-        <%= f.input :week_no %>
+        <%= f.input :week_no, :label => 'Week #' %>
       </div> 
       </div>
       <div class="row">
@@ -44,17 +44,18 @@
         <%= f.input :actions %>
       </div>            
     </div>
-  </div> 
-      </div> 
   <div class="row">
-    <div class="col s12 offset-s5">
-      <div class="form-actions">
-        <%= f.button :submit, "Create TPR", input_html: {class: 'btn btn-main-green' } %>
-      </div> 
+    <div class="form-actions">
+      <div class="col s6">
+        <%= f.button :submit, "Create TPR", class: 'btn btn-main-green right' %>
+      </div>
+      <div class="col s6">
+        <%= link_to 'Back', tpr_ts_path, class: 'btn btn-main-green' %>
+      </div>
     </div>                 
-  </div>  
+  </div> 
+</div>  
 </div>
-
-
+</div>
 <% end %>
 </div>

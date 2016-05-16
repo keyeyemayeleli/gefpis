@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   	evaluation_ts_path(@evaluation_t)
   end
   def after_sign_out_path_for(member_t)
-  	evaluation_ts_path(@evaluation_t)
+  	root_path
   end
 
 
