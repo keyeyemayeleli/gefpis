@@ -44,6 +44,9 @@
           <th data-field="subject">Module</th>
           </div>
           <div class="col s3">
+          <th data-field="subject">Topic</th>
+          </div>
+          <div class="col s3">
           <th data-field="actions"><center>Actions</center></th>
           </div>
         </tr>
@@ -56,6 +59,10 @@
         </div>
         <div class="col s2">
         <td><% t=TuteeT.find(tpr_t.tutee_t_id) %><%= t.first_name %> <%= t.last_name %> </td>
+        </div>
+
+        <div class="col s3">
+        <td><% t= ModuleT.find(tpr_t.module_t_id) %><%= t.file_file_name %></td>
         </div>
 
         <div class="col s3">

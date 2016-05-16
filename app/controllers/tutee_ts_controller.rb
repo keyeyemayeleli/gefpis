@@ -22,6 +22,8 @@ class TuteeTsController < ApplicationController
   # POST /tutee_ts
   def create
     @tutee_t = TuteeT.new(tutee_t_params)
+    @tutee_t.update_attribute(:tuteedatetime,DateTime.now) #timestamp system
+
 
     if @tutee_t.save
       redirect_to @tutee_t, notice: 'Tutee t was successfully created.'
@@ -34,6 +36,7 @@ class TuteeTsController < ApplicationController
   def update
     if @tutee_t.update(tutee_t_params)
       redirect_to @tutee_t, notice: 'Tutee t was successfully updated.'
+      @tutee_t.update_attribute(:tuteedatetime,DateTime.now) #timestamp system
     else
       render :edit
     end

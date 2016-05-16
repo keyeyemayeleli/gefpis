@@ -14,19 +14,18 @@
     </center>
   </div>
 
-  <div class="row">
-    <div class="input-field col s6 offset-s3"> 
+  <div class ="container">
       <div class="row">
-        <div class="input-field col s12">
-          <%= f.association :tutee_t, :label => 'Tutee' %>
+        <div class="dateinput col s12">
+          <%= f.association :tutee_t, :label => 'Tutee', collection: TuteeT.order('last_name ASC') %>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s9">
-          <%= f.association :module_t, :label => 'Module' %>
+        <div class="dateinput col s9">
+          <%= f.association :module_t, :label => 'Module', collection: ModuleT.order('file_file_name ASC') %>
         </div>
-        <div class="input-field col s3">
-        <%= f.input :week_no, :label => 'Week #' %>
+        <div class="dateinput col s3">
+        <%= f.input :week_no, :label => 'Week No.', collection: ['1','2','3','4', '5','6','7','8', '9','10', '11', '12'] %>
       </div> 
       </div>
       <div class="row">
@@ -55,7 +54,6 @@
     </div>                 
   </div> 
 </div>  
-</div>
-</div>
+
 <% end %>
 </div>

@@ -5,7 +5,7 @@
 <center>
   <div class="container card open-sans main-white">
     <div class="card-content">
-      <span class="card-title activator main-green-text">TPR - Week <%= @tpr_t.week_no %> </i></span>
+      <span class="card-title activator main-green-text">TPR - Week <%= @tpr_t.week_no %> -  <%= @tpr_t.tutee_t.first_name %> <%= @tpr_t.tutee_t.last_name %> </i></span>
       <div class="row"><br>
         <b>Tutee</b><br>
         <%= @tpr_t.tutee_t.first_name %> <%= @tpr_t.tutee_t.last_name %><br><br>
@@ -18,7 +18,7 @@
         <br><br>
         <b>Created by:</b>
         <%= @tpr_t.member_t.first_name %> <%= @tpr_t.member_t.middle_initial %>. <%= @tpr_t.member_t.last_name %><br><br>
-        <b>Date & Time of Upload:</b> <%=  %>
+        <b>Date & Time Created:</b> <%= @tpr_t.tprdatetime %>
       </div>
     </div>
   </div>
