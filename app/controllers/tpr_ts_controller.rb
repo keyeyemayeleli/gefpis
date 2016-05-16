@@ -23,7 +23,7 @@ class TprTsController < ApplicationController
   def create
     @tpr_t = TprT.new(tpr_t_params)
     @tpr_t.member_t = current_member_t #This allows name of member to be auto-associated
-    #@tpr_t.update_attribute(:tprdatetime,DateTime.now) #timestamp system
+    @tpr_t.update_attribute(:tprdatetime,DateTime.now) #timestamp system
     if @tpr_t.save
       #flash[:notice] = 'TPR was successfully created.'
       redirect_to @tpr_t
@@ -37,6 +37,7 @@ class TprTsController < ApplicationController
     if @tpr_t.update(tpr_t_params)
       #flash[:notice] = 'TPR was successfully updated.'
       redirect_to @tpr_t
+      @tpr_t.update_attribute(:evaldatetime, DateTime.now) #timestamp system
     else
       render :edit
     end

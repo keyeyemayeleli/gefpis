@@ -3,6 +3,6 @@ class TuteeT < ActiveRecord::Base
 	has_many :tpr_ts
 	has_many :worksheet_ts
 	def to_label
-		"#{self.first_name} #{self.last_name}"
+		"#{self.last_name}, #{self.first_name} "
 	end
 end

@@ -62,4 +62,7 @@ class WorksheetTsController < ApplicationController
     def worksheet_t_params
       params.require(:worksheet_t).permit(:module_t_id, :member_t_id, :tutee_t_id, :school, :score, :reached_quota)
     end
+
+    
+
 end

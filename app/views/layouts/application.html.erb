@@ -43,26 +43,33 @@
             <li><%= link_to "Worksheet", worksheet_ts_path, class: 'main-green-text nav-bar-text'%></li>  
           </ul>
           <ul id="nav-mobile" class="right hide-on-med-and-down open-sans">
-            <li>
-                <label for="search"><i class="material-icons">search</i></label>
-            </li>
-            <li><input id="search" type="search" required></li>
+            
 
             <%elsif current_member_t.membership == "Tutors"%> <!--ACCESSIBILITY IF TUTOR-->
             <ul id="nav-mobile" class="left hide-on-med-and-down open-sans">
             <li><%= link_to "Modules", module_ts_path(), class: 'main-green-text nav-bar-text'%></li>
             <li><%= link_to "Evaluations", evaluation_ts_path(), class: 'main-green-text nav-bar-text'%></li>
-            <li><a class="dropdown-button main-green-text" href="#!" data-activates="dropdown2" data-beloworigin="true"><font size="5" class="nav-bar-text">&nbsp;Tutees</font><i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button main-green-text nav-bar-text" href="#!" data-activates="dropdown2" data-beloworigin="true">&nbsp;Tutees</font><i class="material-icons right">arrow_drop_down</i></a></li>
           </ul>
           <ul id="nav-mobile" class="right hide-on-med-and-down open-sans">
-            <li>
-                <label for="search"><i class="material-icons">search</i></label>
-            </li>
-            <li><input id="search" type="search" required></li>
+
+            <%elsif current_member_t.membership == "Data Analysis"%> <!--ACCESSIBILITY IF TUTOR-->
+            <ul id="nav-mobile" class="left hide-on-med-and-down open-sans">
+             <li><%= link_to "Worksheet", worksheet_ts_path, class: 'main-green-text nav-bar-text'%></li>  
+          </ul>
+          <ul id="nav-mobile" class="right hide-on-med-and-down open-sans">
+
+            <%elsif current_member_t.membership == "Modules"%> <!--ACCESSIBILITY IF TUTOR-->
+            <ul id="nav-mobile" class="left hide-on-med-and-down open-sans">
+            <li><%= link_to "Modules", module_ts_path(), class: 'main-green-text nav-bar-text'%></li>
+            <li><%= link_to "Evaluations", evaluation_ts_path(), class: 'main-green-text nav-bar-text'%></li>
+            <!--<li><a class="dropdown-button main-green-text" href="#!" data-activates="dropdown2" data-beloworigin="true"><font size="4">&nbsp;Tutees</font><i class="material-icons right">arrow_drop_down</i></a></li>-->
+          </ul>
+          <ul id="nav-mobile" class="right hide-on-med-and-down open-sans">
 
             <%end%> 
 
-            <li><a class="dropdown-button main-green-text nav-bar-text" href="#!" data-activates="dropdown1" data-beloworigin="true">Hello, <%= current_member_t.first_name%>!<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button main-green-text nav-bar-text" href="#!" data-activates="dropdown1" data-beloworigin="true">Hello, <%= current_member_t.first_name%>!<i class="material-icons pull right">arrow_drop_down</i></a></li>
           </ul>
 
           <%else%>
