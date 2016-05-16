@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513000628) do
+ActiveRecord::Schema.define(version: 20160516105018) do
 
   create_table "evaluation_ts", force: :cascade do |t|
     t.string   "eval_name"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20160513000628) do
     t.integer  "member_t_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.datetime "tprdatetime"
   end
 
   create_table "tprs", force: :cascade do |t|
@@ -127,6 +128,7 @@ ActiveRecord::Schema.define(version: 20160513000628) do
     t.integer  "group_no"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.datetime "tuteedatetime"
   end
 
   create_table "tutees", force: :cascade do |t|

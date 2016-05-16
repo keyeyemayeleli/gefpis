@@ -41,7 +41,7 @@
           <div class="col s2">
           <th data-field="name">Tutee Name</th>
           </div>
-          <div class="col s2">
+          <div class="col s1">
           <th data-field="subject">School</th>
           </div>
           <div class="col s2">
@@ -50,7 +50,7 @@
           <div class="col s2">
           <th data-field="subject">Last Attended</th>
           </div>
-          <div class="col s4">
+          <div class="col s5">
           <th data-field="actions"><center>Actions</center></th>
           </div>
         </tr>
@@ -61,7 +61,7 @@
         <div class="col s2">
         <td><%= tutee_t.first_name %> <%= tutee_t.last_name %></td>
         </div>
-        <div class="col s2">
+        <div class="col s1">
         <td><%= tutee_t.school %></td>
         </div>
 
@@ -71,7 +71,7 @@
         <div class="col s2">
         <td><%= tutee_t.tuteedatetime %></td>
         </div>
-        <div class="col s4">
+        <div class="col s5">
               <td><center><%= link_to 'Show', tutee_t, :class => 'waves-effect waves-light btn btn-main-green' %>
               <%= link_to 'Edit', edit_tutee_t_path(tutee_t), :class => 'waves-effect waves-light btn btn-main-green' %>
               <%= link_to 'Delete', tutee_t, method: :delete, :class => 'waves-effect waves-light btn btn-main-green', data: { confirm: 'Are you sure?' } %>

@@ -36,46 +36,53 @@
            <%= f.input :last_name, label: 'Last Name' %>
         </div>
         <div class="input-field col s3">
+          <%= f.input :math_grade, label:'Math Grade' %>
+        </div>
+        <div class="input-field col s3">
+          <%= f.input :eng_grade, label:'English Grade' %>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="dateinput col s6">
+          <%= f.input :school, collection: ['Holy Spirit Elementary School', 'Industrial Valley Elementary School']  %>
+        </div>
+          <div class="dateinput col s4">
+           <%= f.association :module_t, label: 'Current Module' %>
+        </div>
+        <div class="dateinput col s2">
+            <%= f.input :group_no, label: 'Group Number', collection: ['1','2','3','4', '5','6','7','8', '9','10', '11', '12','13','14','15'] %>
+     
+
+      </div>
+
+      </div>
+
+      <div class="row">
+        
+        <div class="input-field col s3">
               <%= f.input :father_name, label: "Father's Name" %>
             </div>
         <div class="input-field col s3">
           <%= f.input :father_occupation, label: 'Occupation' %>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <%= f.input :school, collection: ['Holy Spirit Elementary School', 'Industrial Valley Elementary School']  %>
-        </div>
-          
+
+      
           <div class="input-field col s3">
           <%= f.input :mother_name, label: "Mother's Name" %>
         </div>
         <div class="input-field col s3">
            <%= f.input :mother_occupation %>
-        </div>
-      </div>
+        </div>  
 
-      <div class="row">
-        <div class="input-field col s2">
-            <%= f.input :group_no, label: 'Group Number' %>
-      </div>
-        <div class="input-field col s4">
-           <%= f.association :module_t, label: 'Current Module' %>
         </div>
-      
+      <div class="row">
       <div class="input-field col s3">
            <%= f.input :ambition %>
         </div>
         <div class="input-field col s3">
           <%= f.input :fav_color, label: 'Favorite Color' %>
-        </div>
-        </div>
-      <div class="row">
-        <div class="input-field col s3">
-          <%= f.input :math_grade, label:'Math Grade' %>
-        </div>
-        <div class="input-field col s3">
-          <%= f.input :eng_grade, label:'English Grade' %>
         </div>
         <div class="input-field col s3 ">
           <%= f.input :fav_subject, label: 'Favorite Subject' %>

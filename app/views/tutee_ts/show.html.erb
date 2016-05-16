@@ -62,11 +62,11 @@
       </div>
 
       <div class="row">
-        <div class="input-field col s2">
+        <div class="input-field col s3">
           <label class="active" for="first_name">Group Number</label>
             <%= @tutee_t.group_no %>
       </div>
-        <div class="input-field col s4">
+        <div class="input-field col s3">
           <label class="active" for="first_name">Current Module</label>
            <% t= ModuleT.find(@tutee_t.module_t_id) %> <%= t.file_file_name %>
         </div>
@@ -101,7 +101,6 @@
 
         <div class="form-actions"><center>
    <br>
-   <%= link_to 'Progress Report', tpr_t_path(@tutee_t), :class => 'waves-effect waves-light btn btn-main-green' %> 
    <%= link_to 'Edit', edit_tutee_t_path(@tutee_t), :class => 'waves-effect waves-light btn btn-main-green' %> 
 <%= link_to 'Back', tutee_ts_path, :class => 'waves-effect waves-light btn btn-main-green' %>
   </center></div>
